@@ -1,0 +1,25 @@
+.noteItem {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.noteItem input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.noteItem h2 {
+  color: black;
+  margin: 0 0 10px;
+}
+
+.noteItem p {
+  color: black;
+  margin: 0 0 20px;
+}
