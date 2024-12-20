@@ -19,18 +19,20 @@ class GameQuestion {
           }
         }
 
-        static async getLastGame(req, res) {
+      
+          static async getAllQuestionGame(req, res) {
             try {
-              const maxGame = await GameQuestionService.getMaxGameId();
-              if (!maxGame) {
-                return res.status(404).json({ message: 'Игры не найдены' });
-              }
-              return res.status(200).json(maxGame);
-            } catch (error) {
-              console.error(error);
-              return res.status(500).json({ message: 'Ошибка при получении последней игры' });
+            const {game_id} = req.body
+              const favorites = await GameQuestionService.getMaxGameId(game_id);
+              return res.status(200).json(formatResponse(200, "success", favorites));
+            } catch ({ message }) {
+              console.error(message);
+              res
+                .status(500)
+                .json(formatResponse(500, "Internal server error", null, message));
             }
           }
+        
 }
 
 module.exports = GameQuestion

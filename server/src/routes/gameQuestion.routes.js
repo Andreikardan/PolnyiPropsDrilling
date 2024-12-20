@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const GameQuestionController = require("../controllers/GameQuestion.controller");
-const verifyAccessToken = require("../middleware/verifyAccessToken");
+// const verifyAccessToken = require("../middleware/verifyAccessToken");
 
 router
  
-  .get("/ ", verifyAccessToken, GameQuestionController.getLastGame) 
-  .post("/", verifyAccessToken, GameQuestionController.createGameQuestion)
+  .get("/", GameQuestionController.getAllQuestionGame) 
+  .post("/",  GameQuestionController.createGameQuestion)
  
 
 module.exports = router;
