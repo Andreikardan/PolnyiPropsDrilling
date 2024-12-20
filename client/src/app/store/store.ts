@@ -1,12 +1,14 @@
+
 import { topicReducer } from "@/entities/topics";
+import { questionReducer } from "@/entities/question/slice";
 import { userReducer } from "@/entities/user/slice";
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
   reducer: {
-    user:userReducer,
-    topic:topicReducer
-
+    topic:topicReducer,
+    user: userReducer,
+    question: questionReducer,
   },
 });
 
