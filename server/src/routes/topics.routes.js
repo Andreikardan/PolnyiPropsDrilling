@@ -1,3 +1,5 @@
+const TopicsController = require("../controllers/Topics.controller");
+
 const router = require("express").Router();
-router.get('/')
+router.get('/',TopicsController.getTopicsWithQuestion)
 module.exports = router;

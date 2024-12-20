@@ -1,0 +1,2 @@
+export { topicReducer } from "./slice";
+
