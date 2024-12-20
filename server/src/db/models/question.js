@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         through:{
           model: GameQuestion
         },
-        foreignKey: "question_id"
+        foreignKey: "question_id",
+       
       })
      
     }
