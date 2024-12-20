@@ -1,4 +1,3 @@
-import { QuestionType } from "@/entities/question/model";
 
 export interface IGameQuestion {
     id:number;
@@ -6,9 +5,11 @@ export interface IGameQuestion {
     question_id: number;
     createdAt: Date;
     updatedAt: Date;
-    Question: QuestionType;
-    // Game: GameType
 }
 
-export type ArrayGameQUestionType = Array<IGameQuestion>;
+
+export type ArrayGameQUestionType = Array<IGameQuestion>
+
+ 
+
 

@@ -7,7 +7,7 @@ import { AxiosError } from "axios";
 enum TOPICS_THUNKS_TYPES {
   GET_ALL = "topic/getAll",
 }
-export const getTopicsWithQuestions = createAsyncThunk<
+export const getTopicsWithQuestionsThunk = createAsyncThunk<
   IApiResponseSuccess<ArrayTopicsType>,
   void,
   { rejectValue: IApiResponseReject }

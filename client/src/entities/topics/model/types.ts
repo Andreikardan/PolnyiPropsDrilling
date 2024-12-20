@@ -1,4 +1,4 @@
-import { ArrayQuestionType } from "@/entities/question/model/types"
+import {  ArrayQuestionType } from "@/entities/question/model/types"
 
 export type TopicsType = {
   id:number
