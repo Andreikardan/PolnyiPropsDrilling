@@ -4,7 +4,7 @@ const GameQuestionController = require("../controllers/GameQuestion.controller")
 
 router
  
-  .get("/", GameQuestionController.getAllQuestionGame) 
+  
   .post("/",  GameQuestionController.createGameQuestion)
  
 
