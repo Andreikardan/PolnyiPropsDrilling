@@ -1,13 +1,15 @@
-const{Game}=require('../db/models')
+const{Game, Question}=require('../db/models')
 
 class GameService{
     static async last(id) {
         const maxIdRecord = await Game.findOne({
             where: { user_id: id },
-            order: [['id', 'DESC']]
+            order: [['id', 'DESC']],
+            include:{model: Question}
         });
-        return maxIdRecord ? maxIdRecord.id : null;
+        return maxIdRecord ? maxIdRecord : null;
     }
+
     static async create(data){
         return await Game.create(data)
     }

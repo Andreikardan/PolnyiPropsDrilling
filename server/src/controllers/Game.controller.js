@@ -13,6 +13,35 @@ class GameController{
         }
         }
 
+
+        static async getMaxGame(req, res) {
+            console.log(5555555);
+            
+            const { id } = req.params;
+        console.log(id);
+        
+           
+            try {
+           
+              const game = await GameService.last(id);
+        
+             if (!game) {
+                return res
+                  .status(404)
+                  .json(formatResponse(404, `Game with id ${id} not found`));
+              }
+        
+               res.status(200).json(formatResponse(200, 'success', game));
+            } catch ({ message }) {
+              console.error(message);
+              res
+                .status(500)
+                .json(formatResponse(500, 'Internal server error', null, message));
+            }
+          }
+
+
+
     static async update(req, res) {
         const {user} = res.locals
         const {result} = req.body

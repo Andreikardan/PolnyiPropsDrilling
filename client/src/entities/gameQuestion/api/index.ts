@@ -6,17 +6,22 @@ import { defaultRejectedAxiosError } from "@/shared/consts";
 import { AxiosError } from "axios";
 
 enum GAMEQUESTION_THUNKS_TYPES {
+
+
     CREATE = 'gameQuestion/create',
   }
 
 
 export const createGameQuestionThunk = createAsyncThunk<
   IApiResponseSuccess<IGameQuestion>,
+
   {game_id:number, question_id:number},
+
   { rejectValue: IApiResponseReject}
 >(GAMEQUESTION_THUNKS_TYPES.CREATE, async (newGameQuestion, { rejectWithValue }) => {
   try {
     const { data } = await axiosInstance.post<IApiResponseSuccess<IGameQuestion>>(
+
       '/game-question',
       newGameQuestion
     );

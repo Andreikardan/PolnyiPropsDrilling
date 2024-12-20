@@ -9,12 +9,15 @@ import {
 import { ArrayGameQUestionType } from './model';
 
 type GameQuestionState = {
+
   gameQuestions: ArrayGameQUestionType | [];
+
   error: string | null;
   loading: boolean;
 };
 
 const initialState: GameQuestionState = {
+
   gameQuestions: [],
   error: null,
   loading: false,
@@ -26,11 +29,13 @@ const gameQuestionSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+
       .addCase(createGameQuestionThunk.pending, (state) => {
         state.loading = true;
       })
       .addCase(createGameQuestionThunk.fulfilled, (state, action) => {
         state.loading = false;
+
         state.gameQuestions = [...state.gameQuestions, action.payload.data];
         state.error = null;
         message.success(action.payload.message);
