@@ -21,7 +21,7 @@ export function Navbar(): React.ReactElement {
       <Button text="Главная" color="green" type="button" onClick={() => navigate(ROUTES.HOME)} />
       {user ? (
         <>
-          {/* <Button text="Вещи" color="green" type="button" onClick={() => navigate(ROUTES.ITEMS)} /> */}
+          <Button text="Игра" color="green" type="button" onClick={() => navigate(ROUTES.GAME)} />
           <Button text="Выход" color="red" type="button" onClick={signOutHandler} />
         </>
       ) : (
